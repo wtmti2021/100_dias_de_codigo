@@ -1,0 +1,51 @@
+body{
+  height: 100vh;
+  overflow: hidden;
+  color: #d6dae7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 350px;
+  height: 500px;
+  perspective: 800px;
+}
+
+.card {
+  width: 500px;
+  position: relative;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+}
+
+.front-side, .back-side {
+  height: 500px;
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px 2px grey;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front-side {
+  background-size: 100% 100%;
+  background-image: url('https://media.istockphoto.com/id/2157001010/pt/foto/modern-car-as-product-shot.webp?s=1024x1024&w=is&k=20&c=WOw1j0pioTIp2d2wHpXn2QxWoxJ_WU2asBez8fyd4-s=');
+}
+
+.back-side {
+  background-color: #1c388f;
+  transform: rotatey(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.container:hover > .card {
+  cursor: pointer;
+  transform: rotatey(180deg);
+}
+
